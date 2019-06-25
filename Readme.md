@@ -18,7 +18,7 @@ This is an updated version due to changes changes between LPL version 3 and LPL 
 
 ## Li6400Import
 
-Imports a csv or tsv text file from a Licor 6400. As I was not happy that the date is not included by default in each sample, this function uses the date from the header and updates the HHMMSS vector to create a full date and time information. Makes it easier to keep track of regular, or diurnal measurements. Remarks and data are separated and provided individually. The function returns a list with two data frames. The first data frame holds the data without remarks, the second data frame provides the remarks only. 
+Imports a csv or tsv text file from a Licor 6400. As I was not happy that the date is not included by default in each sample, this function uses the date from the header and updates the HHMMSS vector to create a full date and time information. Makes it easier to keep track of regular, or diurnal measurements. Remarks and data are separated and provided individually. The function returns a list with two data frames. The first data frame holds the data without remarks, the second data frame provides the remarks and an index of the row number that each remark was in. 
 
 
 ## Li6400Recalc

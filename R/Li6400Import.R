@@ -2,7 +2,7 @@
 #' 
 #' @param file Filename of the Li6400 text file (usually .csv or .tsv)
 #' @param sep Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. "," for comma-separated.
-#' @return List with two items: data.frame with the imported file without the remarks, and data.frame with the remarks.
+#' @return List with two items: data.frame with the imported file without the remarks, and data.frame with the remarks and and new vector RemarkRow that provides the original row number of the remark before the split of data and remarks.
 #' @export
 
 Li6400Import <- function(file, sep = "\t") {
@@ -37,7 +37,11 @@ Li6400Import <- function(file, sep = "\t") {
   y$HHMMSS <- as.POSIXct(y$HHMMSS)
   
   # move Remarks out of the way, they are provided separately
-  remarks <- y[is.na(y$FTime), ]
+  # get information on the rows that the remarks were in
+  remarks 	    <- y[is.na(y$FTime), ]
+  remarks.row       <- which(is.na(y$FTime))
+  remarks$RemarkRow <- remarks.row
+  
   y <- y[!is.na(y$FTime), ]
   out <- list(data = y,
               remarks = remarks)
