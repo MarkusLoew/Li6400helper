@@ -44,12 +44,3 @@ Li6400Import <- function(file, sep = "\t") {
   return(out)
 }
 
-
-#the.folder <- "~/Swinburne/Licor/light_response_glasshouse"
-#the.file <- "2019-02-18_Blue_lightresponse.csv"
-
-#the.file <- paste(the.folder, the.file, sep = "/")
-
-#x <- Li6400Import(the.file)
-
-

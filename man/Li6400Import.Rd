@@ -9,7 +9,7 @@ Li6400Import(file, sep = "\\t")
 \arguments{
 \item{file}{Filename of the Li6400 text file (usually .csv or .tsv)}
 
-\item{sep}{Character string to identify columns in the Li6400 file. Default is "`\t`" for tab-separated. "," for comma-separated.}
+\item{sep}{Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. "," for comma-separated.}
 }
 \value{
 Data.frame with the imported file.
