@@ -1,7 +1,7 @@
 #' Imports Licor 6400 photosynthesis system output files.
 #' 
 #' @param file Filename of the Li6400 text file (usually .csv or .tsv)
-#' @param sep Character string to identify columns in the Li6400 file. Default is "`\t`" for tab-separated. "," for comma-separated.
+#' @param sep Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. "," for comma-separated.
 #' @return Data.frame with the imported file.
 #' @export
 
