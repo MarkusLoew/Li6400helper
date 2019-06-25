@@ -12,7 +12,7 @@ Li6400Import(file, sep = "\\t")
 \item{sep}{Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. "," for comma-separated.}
 }
 \value{
-Data.frame with the imported file.
+List with two items: data.frame with the imported file without the remarks, and data.frame with the remarks.
 }
 \description{
 Imports Licor 6400 photosynthesis system output files.

@@ -2,7 +2,7 @@
 #' 
 #' @param file Filename of the Li6400 text file (usually .csv or .tsv)
 #' @param sep Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. "," for comma-separated.
-#' @return Data.frame with the imported file.
+#' @return List with two items: data.frame with the imported file without the remarks, and data.frame with the remarks.
 #' @export
 
 Li6400Import <- function(file, sep = "\t") {
