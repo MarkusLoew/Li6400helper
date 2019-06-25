@@ -23,6 +23,6 @@ Imports a csv or tsv text file from a Licor 6400. As I was not happy that the da
 
 ## Li6400Recalc
 
-If the leaf does not fill the full area of the IRGA cuvette, some of the gas exchange paramters need to be recalculated once the actual leaf area is known. This function returns either a data frame with the changed parameters only, or returns the data frame with the updated parameters in place, in context of the full file.
-The calculations are taken form the compute list of a Li6400 IRGA. The source code shows the compute list entry and the corresponding R code. Be aware that rounding errors occur! And as usual, no guarantee for error-free recalculation.
+If the leaf does not fill the full area of the IRGA cuvette, some of the gas exchange parameters need to be recalculated once the actual leaf area is known. This function returns either a data frame with the changed parameters only, or returns the data frame with the updated parameters in place, in context of the full file.
+The calculations are taken from the default compute list of a Li6400 IRGA. The source code shows the compute list entry and the corresponding R code. Be aware that rounding errors occur! And, as usual, no guarantee for error-free recalculation.
 
