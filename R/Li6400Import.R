@@ -1,8 +1,8 @@
-#' Imports Licor 6400 photosynthesis system output files.
+#' Imports Licor 6400 photosynthesis system files.
 #' 
 #' @param file Filename of the Li6400 text file (usually .csv or .tsv)
-#' @param sep Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. "," for comma-separated.
-#' @return List with two items: data.frame with the imported file without the remarks, and data.frame with the remarks and and new vector RemarkRow that provides the original row number of the remark before the split of data and remarks.
+#' @param sep Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. Use "," for comma-separated.
+#' @return Returns a list with two items: a data.frame with the imported file without the remarks, and a data.frame with the remarks and a new vector RemarkRow that provides the original row number of the remark before the split of data and remarks.
 #' @export
 
 Li6400Import <- function(file, sep = "\t") {
@@ -38,9 +38,15 @@ Li6400Import <- function(file, sep = "\t") {
   
   # move Remarks out of the way, they are provided separately
   # get information on the rows that the remarks were in
-  remarks 	    <- y[is.na(y$FTime), ]
-  remarks.row       <- which(is.na(y$FTime))
+  remarks <- y[is.na(y$FTime), ]
+  remarks.row <- which(is.na(y$FTime))
   remarks$RemarkRow <- remarks.row
+  
+  # rename to avoid overwriting Obs in case the remarks will be merged back with the data later
+  names(remarks) <- gsub("^Obs", "Remarks", names(remarks))
+  
+  # only keep row information and remarks
+  remarks <- remarks[, names(remarks) %in% c("Remarks", "RemarkRow")]
   
   y <- y[!is.na(y$FTime), ]
   out <- list(data = y,

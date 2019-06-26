@@ -2,18 +2,18 @@
 % Please edit documentation in R/Li6400Import.R
 \name{Li6400Import}
 \alias{Li6400Import}
-\title{Imports Licor 6400 photosynthesis system output files.}
+\title{Imports Licor 6400 photosynthesis system files.}
 \usage{
 Li6400Import(file, sep = "\\t")
 }
 \arguments{
 \item{file}{Filename of the Li6400 text file (usually .csv or .tsv)}
 
-\item{sep}{Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. "," for comma-separated.}
+\item{sep}{Character string to identify columns in the Li6400 file. Default is "\\t" for tab-separated. Use "," for comma-separated.}
 }
 \value{
-List with two items: data.frame with the imported file without the remarks, and data.frame with the remarks.
+Returns a list with two items: a data.frame with the imported file without the remarks, and a data.frame with the remarks and a new vector RemarkRow that provides the original row number of the remark before the split of data and remarks.
 }
 \description{
-Imports Licor 6400 photosynthesis system output files.
+Imports Licor 6400 photosynthesis system files.
 }
