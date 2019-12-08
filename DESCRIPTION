@@ -1,6 +1,6 @@
 Package: Li6400helper
 Title: Helper functions for Licor 6400 IRGA gas exchange files
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: person("Markus", "Loew", email = "llow@swin.edu.au", role = c("aut", "cre"))
 Description: Functions to import and to recalculate Licor 6400 IRGA gas exchange files. Package development was supported by ARC grant LP130101183.
 Depends: R (>= 3.0.0)
@@ -9,4 +9,4 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   utils
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2

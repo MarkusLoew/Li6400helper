@@ -79,7 +79,7 @@ RWm2 <- (data$PARi * data$f_parin + data$PARo * data$f_parout) * data$alphaK
 
 # #2218 "Tl-Ta" "energy balance delta t"
 # " (#2216 + 1.0773E-7 * ((#2214 ^ 4) - (#2213 ^ 4)) - #20 * 44100.0)/(#111 * 51.4 + 4.3092E-7 * (#2213 ^ 3)) "
-TlTa <-((RWm2 + 0.00000010773 * (Twall_K^4 - Tair_K^4)) / BLC_1 * 0.92 * 2 * 29.3 + 0.00000043092 * Tair_K ^3)
+TlTa <-((RWm2 + 0.00000010773 * (Twall_K^4 - Tair_K^4)) - Trans * 44100) / (BLC_1 * 0.92 * 2 * 29.3 + 0.00000043092 * Tair_K ^3)
 
 # #221F2 "CTleaf" "Computed leaf temp"
 # " Tleaf_c + #2218 * doEB"
